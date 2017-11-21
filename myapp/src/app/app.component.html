@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+{{title}}
+<!--<button (click)="sayHello()">Hello</button>-->
+
+<div>
+  <h3>Add Employee:</h3>
+  <div>
+    Name: <input type="text" #name>  
+  </div> 
+  <div>
+      Age: <input type="number" #age>  
+  </div>
+  <div>
+    <button (click)="addEmployee(name.value,age.value)">Add Employee</button> 
+  </div>  
+</div> 
+<br>
+<table>
+  <thead>
+    <th>Name:</th>
+    <th> Age:</th>
+    <th>View</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees">
+      <td>{{emp.name}}</td>
+      <td>{{emp.age}}</td>
+      <td><button (click)="onSelectEmployee(emp)">View</button><td>
+    </tr>
+  </tbody> 
+</table>
+
+  <div *ngIf=selectedEmployee>
+    <h2>Selected Employee:</h2>
+    <p>Name:{{selectedEmployee.name}}</p>  
+    <p>Name:{{selectedEmployee.age}}</p>
+  </div> 
+
+<my-footer></my-footer>
